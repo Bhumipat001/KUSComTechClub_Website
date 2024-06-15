@@ -1,6 +1,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
 const SPREADSHEET_ID = import.meta.env.VITE_SPREADSHEET_ID;
 const RANGE = import.meta.env.VITE_RANGE_members;
+const defaultPicture = new URL('../images/logo_background.png', import.meta.url).href;
 
 function fetchData() {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
@@ -56,7 +57,7 @@ function displayCards(members) {
       const card = document.createElement('div');
       card.className = 'card';
       card.style.backgroundImage = `url(${member.backgroundImage})`;
-      const pictureUrl = member.picture ? member.picture : 'images/logo_background.png';
+      const pictureUrl = member.picture ? member.picture : defaultPicture;
       card.innerHTML = `
         <img src="${pictureUrl}" alt="${member.name}">
         <h3 style="color:${member.textColor};">${member.name}</h3>
