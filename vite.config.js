@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path'; // Import resolve from path module
+import { resolve } from 'path';
 
 export default defineConfig({
   base: '/KUSComTechClub_Website/',
@@ -14,4 +14,7 @@ export default defineConfig({
     }
   },
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'],
+  server: {
+    host: true
+}
 });

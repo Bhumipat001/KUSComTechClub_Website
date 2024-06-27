@@ -29,6 +29,7 @@ header {
     align-items: center;
     transition: transform 0.3s ease;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .scroll-up {
